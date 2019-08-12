@@ -27,7 +27,7 @@ const db = knex({
 
 //Get All Users
 app.get('/',(req, res)=> {
-    res.json(database.users);
+    res.json("working");
 });
 
 //SignIn
