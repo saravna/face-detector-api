@@ -45,7 +45,7 @@ app.put('/image',(req, res) => {image.handleEntry(req, res, db)});
 //handleApi
 app.post('/apicall',(req, res) => {image.handleApiCall(req, res)});
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('App is running');
 });
 
