@@ -16,12 +16,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const db = knex({
-    client: 'mysql',
+    client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : 'root',
-      password : '',
-      database : 'face-detector'
+      connectionString : process.env.DATABASE_URL,
+      ssl : 'true'
     }
   });
 
