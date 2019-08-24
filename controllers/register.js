@@ -32,7 +32,7 @@ const handleRegister = (req, res, db, bcrypt) => {
         .then(trx.commit)
         .catch(trx.rollback)
     })
-    .catch(err=>res.status(400).send('Error Registering'));
+    .catch(err=>res.status(404).send('Error Registering'));
     // database.users.push({
     //     id : '3',
     //     name : name,
