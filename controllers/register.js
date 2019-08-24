@@ -23,7 +23,7 @@ const handleRegister = (req, res, db, bcrypt) => {
                 .then(id => {
                     db.select('*')
                         .from('users')
-                        .where('id','=',id[0])
+                        .where('id','=',id)
                         .then(user => {
                             res.json(user[0]);
                         });
