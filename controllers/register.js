@@ -14,7 +14,6 @@ const handleRegister = (req, res, db, bcrypt) => {
         })
         .into('login')
         .then(response => {
-            console.log(email);
             return trx('users')
                 .insert({
                     name : name,
@@ -22,10 +21,9 @@ const handleRegister = (req, res, db, bcrypt) => {
                     joined : new Date()
                 })
                 .then(id => {
-                    console.log(email);
                     db.select('*')
                         .from('users')
-                        .where('id','=',id)
+                        .where('id','=',id[0])
                         .then(user => {
                             res.json(user[0]);
                         });
